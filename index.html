@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="counterup.js"></script>
+    <script type="text/javascript" src="timroi.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        background-image: url("avatar-boy-buon_015639064.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: "Courier New";
+      }
+      #text {
+        color: rgb(235, 213, 213);
+        font-size: 20px;
+        margin-top: 10em;
+        font-family: "sans-serif", "sans-serif", "sans-serif";
+        width: 100%;
+      }
+      #contain {
+        width: 50em;
+        height: 40em;
+        margin-top: 5px;
+        margin-left: 5px;
+        overflow: auto;
+        border: 2px white solid;
+        border-radius: 10px;
+        float: left;
+      }
+      #contain::-webkit-scrollbar {
+        width: 6px;
+        background-color: #f5f5f5;
+      }
+      #contain::-webkit-scrollbar-thumb {
+        background-color: #000000;
+      }
+      #contain::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contain">
+      <div id="text"></div>
+    </div>
+
+    <script type="text/javascript" src="protoclass.js"></script>
+    <script type="text/javascript" src="box2d.js"></script>
+    <script type="text/javascript" src="Main.js"></script>
+    <script type="text/javascript">
+      var contain = document.getElementById("contain");
+
+      var i = 0,
+        text;
+      count = 0;
+      text =
+        "Chào em. hihi<br>$ $ $" +
+        "Haizz, hôm nay tự nhiên anh tâm trạng quá, buồn nhiều thứ, nên anh muốn viết hết ra đây tất cả.<br> Hết sạch những gì anh đang nghĩ trong đầu anh luôn.<br>" +
+        "Hơi dài tý nên em chịu khó đọc nha :v... .Coi như lần cuối anh nhờ em vậy. :))) <br> <br>$" +
+        "Anh và em đã quen nhau khá lâu rồi đấy nhỉ, cũng suýt 2 năm rồi đấy.<br>" +
+        "Gặp em hồi năm nhất, ấn tượng của anh về em là một cô bé người Hà Tĩnh xinh cực kì xinh luôn. <br>" +
+        "Nhìn em lên làm bí thư cũng là lần đầu tiên anh nhìn thấy em, mắt anh cũng bị lệch nhịp mất vài giây đấy(mê gái ghê :))).<br>" +
+        "Nhưng lúc đấy anh cũng chưa để ý em nhiều, chỉ giống bạn bè bình thường thôi, cùng quê nên anh với em cũng dễ nói chuyện.<br>" +
+        "Tính anh cũng nhát, vô vị, ít khi làm quen với con gái, nên nói chuyện nhiều khi cũng nhạt thếch à.<br>" +
+        "Nhưng dần dà, anh với em nói chuyện càng nhiều hơn, những lúc đi về cùng đường, rồi những lúc cùng em làm bài tập lớn, anh nói chuyện với em" +
+        " như không hề có một rào cản nào vậy, lạ ghê<br>" +
+        "Rồi tự nhiên một ngày, anh bỗng chợt nhận thấy, tình cảm anh dành cho em nó có gì đó khác khác, hình ảnh của em trong anh nó đã khác từ khi nào, hóa ra..<br>$ $ $" +
+        "anh thích em mất rồi :))<br>" +
+        "<br>" +
+        "Anh thích em từ lúc đấy, cho đến bây giờ, $anh cố gắng nói chuyện với em nhiều hơn, tự nhiên hơn, để hi vọng em có cảm tình với " +
+        "anh chút chút.<br>" +
+        " Nhìn cách anh nói chuyện với em như vậy, chắc em thừa biết là anh thích em rồi nhỉ :D.<br>" +
+        'Nhưng cũng may là em không hề bơ anh tý nào, phù , anh mời em đi xem phim, em trả lời "gật gật", lễ anh bảo a ở lại hà nội kiếm tiền lo vợ con, em vui tính ' +
+        'nhắn lại "về đây em nuôi", em nhớ không. Biết là em biết anh thích em, mà em vẫn đối xử với anh tự nhiên như vậy, anh vui lắm.<br>$' +
+        "Thậm chí lúc chị em lên đây chơi, em cũng rủ anh đi cùng. Em có biết là lúc đấy, anh tràn đầy hi vọng không, $ $tối hôm đấy mình đi với nhau, chị em vs anh kia đi riêng " +
+        "với nhau, anh với em nói đủ thứ chuyện, trên trời dưới đất đủ cả, đến cả khi về kí túc ngồi, vẫn ngồi ghế đá nói chuyện với em không muốn nghỉ, nói thật lúc đấy," +
+        "anh chỉ muốn ngồi như thế mãi thôi. $Em biết không, lúc đấy anh đã nghĩ, điều anh muốn làm, " +
+        "là được yêu em, sắp trở thành hiện thực rồi. :))))))))))<br>" +
+        "<br>" +
+        "Nhưng mà........ $ $ $ $ $ <br> <br>" +
+        "Dạo gần đây, anh bỗng nhận ra, em không còn muốn nói chuyện với anh như lúc trước nữa, những câu em trả lời anh chỉ vọn vẹn là trả lời những gì anh hỏi,không hơn, không thêm, không đùa. " +
+        "Anh có cảm giác, em không còn muốn nói chuyện với anh nữa, em trả lời anh, chỉ là miễn cưỡng trả lời thôi.<br> $ $ $" +
+        "Tại sao thế em, có phải anh đã làm sai điều gì không?<br>" +
+        "Tự nhiên anh sợ, em ạ, $anh sợ thực sự đấy. " +
+        "Từ khi thích em, anh đã ấp ủ bao nhiêu dự định anh định làm, cùng em học, cùng em ra trường, cùng em đi làm, về quê em chơi, mời em về nhà anh ..v.v<br>$" +
+        "<br>Anh sợ bây giờ tất cả những điều đấy sẽ vỡ nát.<br><br>$" +
+        "Thực tình anh không biết được mấy ngày qua anh đã làm sai điều gì, anh đã ngồi suy xét tất cả những việc anh làm và không biết anh đã làm việc gì không nên làm hay không.<br>$" +
+        "Và nếu là có, không biết bây giờ em đang nghĩ thế nào về anh nữa, $ $ Nói thật bây giờ, lòng anh đang rối như tơ vò.<br><br>" +
+        "Nếu anh làm điều gì khiến em thấy không vừa ý, $ anh xin lỗi.<br>" +
+        "Nếu anh làm em cảm thấy yêu đương là một điều gì đó áp lực, không thoải mái, $ anh xin lỗi.<br><br>" +
+        "Xin hãy nói tất cả điều đấy với anh, anh sẽ ngừng lại, anh sẽ không làm bất cứ điều gì làm em phải cảm thấy áp lực nữa, tuyệt đối không.<br>" +
+        "Anh sẽ không khiến em phải bận tâm trả lời tin nhắn của anh nữa, không làm em cảm thấy phiền khi phải đi học cùng anh nữa, anh sẽ không cứ rủ em phải đi ăn cùng anh nữa, không phải khiến em canh cánh trong lòng là anh sẽ nhắn tin với em, rồi em sẽ buộc trả lời lại, nếu em không muốn, $ anh sẽ không nhắn nữa.<br>" +
+        "Em hãy làm những điều mà em muốn làm, thích những người mà em thích, nói chuyện với những chàng trai mà em muốn nói chuyện, chỉ cần là những điều em thấy vui, anh nhất định sẽ không xuất hiện, anh hứa đấy.<br>" +
+        "Những điều anh cần, chỉ là.... $ $ $ $ <br>" +
+        "Nếu lúc nào đó, em cảm thấy quá áp lực, em cảm thấy buồn bã, chán nản, muốn hét lên thật to hoặc muốn đi đâu đó cho khuây khỏa, mà bên cạnh em không có ai, thì hãy nhắn cho anh.<br>" +
+        "Lúc em cần thằng người yêu bên cạnh để đập, để đá, để đánh, hãy gọi cho anh<br>" +
+        "anh muốn nhìn em sẽ vui vẻ thực sự, không còn lo âu, không còn chút muộn phiền nào hết cả.<br>" +
+        "Mọi thứ em muốn chia sẻ với anh, anh sẽ lắng nghe hết mọi thứ.<br>" +
+        "Hãy xem anh như là một thằng người yêu ngốc nghếch của em $ $ vậy thôi." +
+        "Chỉ cần là em cần anh thôi, chỉ cần em cảm thấy thoải mái hơn, anh sẽ luôn ở đó.<br>" +
+        "Những điều anh muốn làm khi yêu em, đơn giản chỉ mong em như thế, chứ anh đâu muốn là để em cảm thấy chuyện yêu đương nó gò bó như em cảm thấy bây giờ đâu.<br>" +
+        "Cuối cùng, anh chỉ mong được một điều thôi, là chỉ cần em chấp nhận anh, chấp nhận một thằng khô cằn cục tính không có gì thú vị như anh<br>" +
+        "Còn mọi thứ còn lại, hãy để anh lo. $ $ $ Được không em?<br><br><br> $ $ $ $" +
+        "<code>Cũng đã lâu rồi anh chưa đặt tình cảm mình vào ai, từ khi thích em nó mới mở lại, nếu lần này đóng chắc anh để vậy luôn chả thèm mở nữa quá, mở ra mở vào cửa không hỏng thì bản lề nó cũng sờn đi mà.</code>" +
+        "<code>Anh biết bây giờ anh chưa có gì cả, chỉ có 2 bàn tay thôi, nếu may mắn thì có cả em nữa. Nhưng anh hứa chỉ cần em ở trong 2 bàn tay ấy, anh nhất định sẽ thay đổi.</code><br>" +
+        "<blockquote>Anh yêu em mất rồi Sương ạ, anh định sẽ dịp nào đấy, như  trung thu này chẳng hạn, đi chơi cùng em rồi anh tỏ tình em.<br></blockquote>" +
+        "<blockquote>Anh tính thế. Nhưng mà bây giờ như này thì anh chỉ có thể viết ra và gửi em thôi :(</blockquote>" +
+        "<blockquote>Anh sẽ không hứa yêu em mãi mãi, vì đó chỉ là những lời ngôn tình mà thôi.</blockquote>" +
+        "<blockquote>Nhưng anh sẽ cố gắng yêu em bằng tất cả những gì anh có thể.</blockquote>" +
+        "<blockquote>Nếu em cho anh một cơ hội, dù không phải bây giờ, mà là sau này, bao lâu cũng được, anh sẽ đợi em.</blockquote>" +
+        "<blockquote>Hãy cho anh một cơ hội, được không?.</blockquote>" +
+        "Đó là tất cả những suy nghĩ hiện giờ của anh, những điều anh để trong lòng thì đều nói ra hết rồi, hi vọng em hiểu nỗi lòng của a, không cần em trả lời anh ngay bây giờ, anh sẽ đợi, a đợi tin nhắn của em. <br>$ $ $ $" +
+        "Anh yêu em, $ $ Anh thực sự yêu em mất rồi :((";
+
+      function typing() {
+        if (i < text.length) {
+          document.getElementById("text").innerHTML =
+            text.substring(0, count++) + "_";
+
+          if (text.charAt(i) == ",") setTimeout(typing, 180);
+          else if (
+            text.charAt(i) == "." &&
+            text.charAt(i + 1) != "." &&
+            text.charAt(i - 1) != "."
+          )
+            setTimeout(typing, 230);
+          else if (text.charAt(i) == "$") {
+            setTimeout(typing, 500);
+            text = text.substring(0, i) + text.substring(i + 1, text.length);
+          } else setTimeout(typing, 50);
+          i++;
+        }
+        contain.scrollTop = contain.scrollHeight;
+      }
+      typing();
+    </script>
+
+    <iframe
+      src="https://www.nhaccuatui.com/bai-hat/em-oi-em-dung-khoc-cao-nam-thanh.PSbz6l0Tm39J.html"
+      width="1"
+      height="1"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>
